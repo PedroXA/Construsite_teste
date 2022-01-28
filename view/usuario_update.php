@@ -41,7 +41,7 @@
 
             <div class="form-group col-md-4">
                 <label for="telefone">Telefone</label>
-                <input class="form-control" type="text" name="telefone_cliente" value="<?=$usuario->telefone_cliente?>" required/>
+                <input class="form-control" type="text" name="telefone_cliente" id="telefone" onkeypress="mascaraTel()" value="<?=$usuario->telefone_cliente?>" required/>
             </div>
 
             <div class="form-group col-md-4">
@@ -57,6 +57,34 @@
             <button class="btn btn-warning" type="submit">Alterar</button>
 
         </form>
+
+        <!-------------- Mascaras -------------->
+    <script>
+        function mascaraTel() {
+
+            var telefoneM = document.getElementById("telefone").value
+
+            document.getElementById("telefone").maxLength = "13"
+
+            if (telefoneM[0] != "(") {
+                if (telefoneM[0] != undefined) {
+                    document.getElementById("telefone").value = "(" + telefoneM[0]
+                }
+            }
+
+            if (telefoneM[3] != ")") {
+                if (telefoneM[3] != undefined) {
+                    document.getElementById("telefone").value = telefoneM.slice(0, 3) + ")" + telefoneM[3]
+                }
+            }
+
+            if (telefoneM[8] != "-") {
+                if (telefoneM[8] != undefined) {
+                    document.getElementById("telefone").value = telefoneM.slice(0, 8) + "-" + telefoneM[8]
+                }
+            }
+        }
+    </script>
 
     </div>
 

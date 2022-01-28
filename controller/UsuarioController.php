@@ -38,7 +38,7 @@ class UsuarioController{
 
         $obj->setId($_GET['id']);
 
-        if( isset($_POST['email_cliente']) && isset($_POST['nome_cliente']) && isset($_POST['telefone_cliente']) && isset($_POST['senha_cliente']) && isset($_POST['datanascimento']) ){
+        if( isset($_POST['email_cliente']) && isset($_POST['nome_cliente']) && isset($_POST['telefone_cliente']) && isset($_POST['senha_cliente']) && isset($_POST['data_nasc_cliente']) ){
             $obj->setEmail_cliente($_POST['email_cliente']);
             $obj->setNome_cliente($_POST['nome_cliente']);
             $obj->setTelefone_cliente($_POST['telefone_cliente']);
